@@ -9,7 +9,7 @@ class PageNotFound extends Component {
         <Jumbotron>
           <h1>Page Not Found</h1>
           <p>
-            La página que usted esta intentando acceder no existe. Por favor, corrobore que esta ingresando bien la dirección URL.
+          The page you are trying to access does not exist. Please check that you are entering the URL address correctly.
           </p>
         </Jumbotron>
       </div>

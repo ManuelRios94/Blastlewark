@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 import './App.css';
 
 
+import Header from './shared/Header/Header';
+import Content from './shared/Content/Content';
+import Footer from './shared/Footer/Footer';
+
 class App extends Component {
   static propTypes = {
       children: PropTypes.object.isRequired
@@ -12,9 +16,9 @@ class App extends Component {
       const { children } = this.props;
       return (
       <div className="App">
-          {/* <Appbar />
+          <Header />
           <Content body={children} />
-          <Footer /> */}
+          <Footer />
       </div>
       );
   }
