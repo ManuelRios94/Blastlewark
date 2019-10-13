@@ -1,0 +1,16 @@
+h6 {
+    color: white;
+}
+
+.Footer-Separator {
+    padding: 50px;
+}
+
+.Footer-Nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
