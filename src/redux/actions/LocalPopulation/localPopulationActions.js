@@ -1,6 +1,6 @@
 import { LOCAL_POPULATION_ADD, LOCAL_POPULATION_CLEAN_ADD } from '../../constants/LocalPopulation/localPopulationConstants'
 
-export function localPopulationAddAction(localPopulation) {
+export const localPopulationAddAction = (localPopulation) => {
     return {
         type: LOCAL_POPULATION_ADD, 
         payload: localPopulation
@@ -9,7 +9,7 @@ export function localPopulationAddAction(localPopulation) {
 }
 
 
-export function localPopulationCleanAddAction() {
+export const localPopulationCleanAddAction = () => {
     return {
         type: LOCAL_POPULATION_CLEAN_ADD
     };
