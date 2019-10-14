@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+
+import { localPopulationAddAction, localPopulationCleanAddAction } from '../../redux/actions/LocalPopulation/localPopulationActions';
 import { URL_GET_HEROES } from '../../utils/constants';
 
 class HomeContainer extends Component {
@@ -11,15 +15,16 @@ class HomeContainer extends Component {
 
 
   componentWillMount() {
+    const { localPopulationAddAction, localPopulationCleanAddAction } = this.props;
     fetch(URL_GET_HEROES, { method: 'GET', mode: 'cors',cache: 'no-store'})
         .then(response => {
             return response.json();
         })
         .catch(error => {
-            this.setState({heroes: null});
+          localPopulationCleanAddAction();
         })
         .then(response => {
-            this.setState({heroes: response});
+          localPopulationAddAction(response.Brastlewark);
         })
   }
 
@@ -34,7 +39,20 @@ class HomeContainer extends Component {
 }
 
 HomeContainer.propTypes = {
+  localPopulation: PropTypes.object.isRequired,
+};
 
-};  
+const mapStateToProps = (state) => {
+  return {
+    localPopulation: state.localPopulation,
+  };
+}
 
-export default HomeContainer;
+const mapDispatchToProps = (dispatch) => {
+  return {
+      localPopulationAddAction: (localPopulation) => {dispatch(localPopulationAddAction(localPopulation));},
+      localPopulationCleanAddAction: () => {dispatch(localPopulationCleanAddAction());},
+  }
+}   
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
