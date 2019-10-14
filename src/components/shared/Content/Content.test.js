@@ -13,7 +13,10 @@ describe('<Content />', () => {
 
   let component;
   beforeEach(() => {
-    component = setUp();
+    const props = {
+      body: <div>Test</div>
+    }
+    component = setUp(props);
   })
 
   it('It should render without crashing', () => {

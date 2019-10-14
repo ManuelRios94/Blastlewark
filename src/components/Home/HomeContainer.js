@@ -13,7 +13,7 @@ import isEmpty from 'lodash/isEmpty';
 import { Table } from './Table/TableComponent';
 import { Menu } from './Menu/MenuComponent';
 
-class HomeContainer extends Component {
+export class HomeContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,9 +33,9 @@ class HomeContainer extends Component {
       showInfoAction 
     } = this.props;
 
-    unselectAction();
     fetch(URL_GET_HEROES, { method: 'GET', mode: 'cors',cache: 'no-store'})
         .then(response => {
+            unselectAction();
             return response.json();
         })
         .catch(error => {
