@@ -22,7 +22,7 @@ toastr.options = {
     "hideMethod": "fadeOut"
 }
 
-class NotificationContainer extends Component {
+export class NotificationContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
