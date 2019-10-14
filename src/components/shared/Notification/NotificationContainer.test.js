@@ -2,27 +2,25 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import Content from './Content';
+import { NotificationContainer } from './NotificationContainer';
 
 const setUp = (props={}) => {
-  const component = shallow(<Content {...props}/>);
+  const component = shallow(<NotificationContainer {...props}/>);
   return component
 }
 
-describe('<Content />', () => {
+describe('<App />', () => {
 
   let component;
   beforeEach(() => {
     const props = {
-      body: <div>Test</div>
+      notification: {}
     }
     component = setUp(props);
   })
 
   it('It should render without crashing', () => {
-    const wrapper = component.find('.Content')
-
-    expect(wrapper.length).to.equal(1); 
+    expect(component.length).to.equal(1); 
   });
 
 });

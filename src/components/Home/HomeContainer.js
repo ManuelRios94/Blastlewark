@@ -2,35 +2,49 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
+//Actions
 import { localPopulationAddAction, localPopulationCleanAddAction } from '../../redux/actions/LocalPopulation/localPopulationActions';
 import { selectAction, unselectAction } from '../../redux/actions/LocalPopulation/selectActions';
+import { showErrorAction, showInfoAction } from '../../redux/actions/Shared/Notification/notificationActions'
+
 import { URL_GET_HEROES } from '../../utils/constants';
+import isEmpty from 'lodash/isEmpty';
 
 import { Table } from './Table/TableComponent';
-import { Menu } from './Menu/MenuContainer';
+import { Menu } from './Menu/MenuComponent';
 
-class HomeContainer extends Component {
+export class HomeContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       index: -1
     };
     this.onClick = this.onClick.bind( this );
+    this.onClickDetails = this.onClickDetails.bind( this );
   }
 
 
   componentWillMount() {
-    const { unselectAction, localPopulationAddAction, localPopulationCleanAddAction } = this.props;
-    unselectAction();
+    const { 
+      unselectAction,
+      localPopulationAddAction,
+      localPopulationCleanAddAction,
+      showErrorAction,
+      showInfoAction 
+    } = this.props;
+
     fetch(URL_GET_HEROES, { method: 'GET', mode: 'cors',cache: 'no-store'})
         .then(response => {
+            unselectAction();
             return response.json();
         })
         .catch(error => {
+          showErrorAction('Error when try to get Local Population.');
           localPopulationCleanAddAction();
         })
         .then(response => {
           localPopulationAddAction(response);
+          showInfoAction('You can select one to see details.');
         })
   }
 
@@ -44,7 +58,11 @@ class HomeContainer extends Component {
   }
 
   onClickDetails() {
-
+    const { selectedLocalPopulation, showErrorAction } = this.props;
+    if (isEmpty(selectedLocalPopulation) ) {
+      showErrorAction('Please select a citizen.');
+    }
+    
   }
 
  
@@ -66,6 +84,7 @@ HomeContainer.propTypes = {
 const mapStateToProps = (state) => {
   return {
     localPopulation: state.localPopulation.Brastlewark,
+    selectedLocalPopulation: state.selectedLocalPopulation,
   };
 }
 
@@ -75,6 +94,8 @@ const mapDispatchToProps = (dispatch) => {
       localPopulationCleanAddAction: () => {dispatch(localPopulationCleanAddAction());},
       selectAction: (localPopulation) => {dispatch(selectAction(localPopulation))},
       unselectAction: () => {dispatch(unselectAction())},
+      showInfoAction: (txt) => {dispatch(showInfoAction(txt))},
+      showErrorAction: (txt) => {dispatch(showErrorAction(txt))}
   }
 }   
 
