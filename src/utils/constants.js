@@ -1,0 +1,1 @@
+export const URL_GET_HEROES = "https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json";
