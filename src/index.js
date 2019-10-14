@@ -9,8 +9,11 @@ import { reducers } from './redux/reducers/index';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
+//Notification
+import Notification from './components/Shared/Notification/NotificationContainer';
+
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import AppRoutes from './routes';
 import * as serviceWorker from './serviceWorker';
 
@@ -27,6 +30,7 @@ const store = createStore(reducers, enhancer);
 
 render(
     <Provider store={store}>
+        <Notification />
         <Router>
             <AppRoutes />
         </Router>
