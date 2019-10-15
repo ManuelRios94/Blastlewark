@@ -3,13 +3,18 @@ Front-End code assessment
 
 How To Run the Proyect:
 
-1) Clone the repository https://github.com/ManuelRios94/Blastlewark.git
+1) Clone the repository https://github.com/ManuelRios94/Blastlewark.git (If you need herl, visit https://help.github.com/en/articles/cloning-a-repository)
 
-2) Go to the folder where it was installed and run npm install
+2) Go to the folder where it was installed and run the command "npm install"
 
-3) Run npm start
+3) Run the command "npm start"
+    3.1) If you want to run unit test enter the command "npm test"
 
 4) The application will run in http://localhost:3000/
+
+How To Use:
+
+
 
 Technical Notes:
 

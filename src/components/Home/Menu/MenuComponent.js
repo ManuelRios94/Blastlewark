@@ -12,7 +12,7 @@ export const Menu = (props) => {
                   <h2>Population List</h2>
               <Dropdown.Divider />
               <ButtonToolbar>
-                <Button className="Menu-Button" variant='success' onClick={props.onClickDetails}>Details</Button>
+                <Button title="Press this to see details of the selected citizen!" className="Menu-Button" variant='success' onClick={props.onClickDetails}>Details</Button>
               </ButtonToolbar>
               <Dropdown.Divider />
               </Col>

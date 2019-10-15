@@ -1,0 +1,14 @@
+.Details{
+    margin: 5%;
+}
+
+.h5{
+    margin-top: 2%;
+}
+
+img{
+    width:100%;
+    max-width: 200px;
+    min-width: 200px;
+    height: auto;
+}

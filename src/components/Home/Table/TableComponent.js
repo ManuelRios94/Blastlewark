@@ -1,8 +1,11 @@
 import React from 'react';
 import { Container, Row, Col} from 'react-bootstrap';
+
 import './Table.css';
 import 'react-table/react-table.css'
 import ReactTable from "react-table";
+
+import { filterCaseInsensitive } from '../../../utils/tableFunctions';
 
 const columns = [
     {
@@ -28,6 +31,7 @@ export const Table = (props) => {
             <Col>
             <ReactTable
               filterable
+              defaultFilterMethod={filterCaseInsensitive}
               data={props.localPopulationList}
               columns={columns}
               defaultPageSize= {10}
