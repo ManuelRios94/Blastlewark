@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import './App.css';
 
 
-import Header from './Shared/Header/Header';
-import Content from './Shared/Content/Content';
-import Footer from './Shared/Footer/Footer';
+import Header from './shared/Header/Header';
+import Content from './shared/Content/Content';
+import Footer from './shared/Footer/Footer';
 
 class App extends Component {
   static propTypes = {
