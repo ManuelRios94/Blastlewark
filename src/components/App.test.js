@@ -3,9 +3,9 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
 import App from './App';
-import Header from './Shared/Header/Header';
-import Content from './Shared/Content/Content';
-import Footer from './Shared/Footer/Footer';
+import Header from './shared/Header/Header';
+import Content from './shared/Content/Content';
+import Footer from './shared/Footer/Footer';
 
 const setUp = (props={}) => {
   const component = shallow(<App {...props}/>);

@@ -10,7 +10,7 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
 //Notification
-import Notification from './components/Shared/Notification/NotificationContainer';
+import Notification from './components/shared/Notification/NotificationContainer';
 
 import './index.css';
 
