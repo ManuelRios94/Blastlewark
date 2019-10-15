@@ -14,7 +14,16 @@ How To Run the Proyect:
 
 How To Use:
 
+1) In http://localhost:3000/ you can see a table with a list of citizen
+    1.1) You can search by Name
+    1.2) You can search by Hair Color
+    1.3) You can sort ascending and descending by Name
+    1.4) You can sort ascending and descending by Age
+    1.5) You can sort ascending and descending by Hair Color
 
+2) You can select a citizen and press the button "Details". This will redirect you to the citizen details information.
+
+3) In this page, on the right, you can se the picture and the name of the citizen. On the left, you can see a Tabs, with Profile Tab, Profession Tab and Friends Tab. If you click in one of them, you will the the related information.
 
 Technical Notes:
 

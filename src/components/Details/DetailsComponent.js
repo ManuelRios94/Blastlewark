@@ -21,7 +21,7 @@ export const Details = (props) => {
                 <Col>
                     <div>
                         <img src={thumbnail} alt="avatar"/>
-                        <h1>{name}</h1>
+                        <h1 className="name">{name}</h1>
                     </div>
                 </Col>
                 <Col>
@@ -30,31 +30,31 @@ export const Details = (props) => {
                             <Row>
                                 <Col>
                                     <h4>Age</h4>
-                                    <p>{age}</p>
+                                    <p className="age">{age}</p>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
                                     <h4>Height</h4>
-                                    <p>{height}</p>
+                                    <p className="height">{height}</p>
                                 </Col>
                                 <Col>
                                     <h4>Weight</h4>
-                                    <p>{weight}</p>
+                                    <p className="weight">{weight}</p>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
                                     <h4>Hair Color</h4>
-                                    <p>{hair_color}</p>
+                                    <p className="hair_color">{hair_color}</p>
                                 </Col>
                             </Row>
                         </Tab>
                         <Tab eventKey="profession" title="Profession">
-                            <ul class="list-group">
+                            <ul className="list-group">
                                 {
                                     professions.map(function(name, index){
-                                        return <li class="list-group-item" key={ index }>{name}</li>;
+                                        return <li className="list-group-item profession" key={ index }>{name}</li>;
                                     })
                                 }
                                 {
@@ -63,10 +63,10 @@ export const Details = (props) => {
                             </ul>
                         </Tab>
                         <Tab eventKey="friends" title="Friends">
-                            <ul class="list-group">
+                            <ul className="list-group">
                                 {
                                     friends.map(function(name, index){
-                                        return <li class="list-group-item" key={ index }>{name}</li>;
+                                        return <li className="list-group-item friend" key={ index }>{name}</li>;
                                     })
                                 }
                                 {
