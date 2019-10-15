@@ -15,7 +15,16 @@ describe('<DetailsContainer />', () => {
   let component;
   beforeEach(() => {
     const props = {
-        selectedLocalPopulation: {name: 'test'}
+        selectedLocalPopulation: {
+          name: 'test',
+          thumbnail: 'img-path',
+          age: 44,
+          weight: 11.11,
+          height: 22.22,
+          hair_color: 'Pink',
+          professions: ['Cooker'],
+          friends: ['John']
+        }
     }
     component = setUp(props);
   })
