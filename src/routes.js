@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import App from './components/App';
 import HomeContainer from './components/Home/HomeContainer';
 import DetailsContainer from './components/Details/DetailsContainer';
-import Page404 from './components/Shared/PageNotFound/PageNotFound';
+import Page404 from './components/shared/PageNotFound/PageNotFound';
 
 const AppRoutes = () => 
     <App>
