@@ -7,7 +7,7 @@ import { localPopulationAddAction, localPopulationCleanAddAction } from '../../r
 import { selectAction, unselectAction } from '../../redux/actions/LocalPopulation/selectActions';
 import { showErrorAction, showInfoAction } from '../../redux/actions/Shared/Notification/notificationActions'
 
-import { URL_GET_HEROES } from '../../utils/constants';
+import { URL_GET_HEROES, GET_HEADER } from '../../utils/constants';
 import isEmpty from 'lodash/isEmpty';
 
 import { Table } from './Table/TableComponent';
@@ -33,7 +33,7 @@ export class HomeContainer extends Component {
       showInfoAction 
     } = this.props;
 
-    fetch(URL_GET_HEROES, { method: 'GET', mode: 'cors',cache: 'no-store'})
+    fetch(URL_GET_HEROES, GET_HEADER)
         .then(response => {
             unselectAction();
             return response.json();
@@ -44,7 +44,7 @@ export class HomeContainer extends Component {
         })
         .then(response => {
           localPopulationAddAction(response);
-          showInfoAction('You can select one to see details.');
+          showInfoAction('[HELP] Select one and press "Details" button.');
         })
   }
 
@@ -58,9 +58,11 @@ export class HomeContainer extends Component {
   }
 
   onClickDetails() {
-    const { selectedLocalPopulation, showErrorAction } = this.props;
+    const { selectedLocalPopulation, showErrorAction, history } = this.props;
     if (isEmpty(selectedLocalPopulation) ) {
-      showErrorAction('Please select a citizen.');
+      showErrorAction('Please select a citizen first.');
+    } else {
+      history.push('/hero/details');
     }
     
   }
