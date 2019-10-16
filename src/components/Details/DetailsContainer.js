@@ -42,9 +42,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-const mapDispatchToProps = () => {
-  return {
-  }
-}   
-
-export default connect(mapStateToProps, mapDispatchToProps)(DetailsContainer);
+export default connect(mapStateToProps)(DetailsContainer);
