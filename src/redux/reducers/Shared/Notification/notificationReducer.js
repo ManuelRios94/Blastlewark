@@ -3,7 +3,7 @@ import { SHOW_ERROR, SHOW_INFO, SHOW_SUCCESS, SHOW_WARNING } from '../../../cons
 
 
 export const notificationReducer = (state = initialState.notification, action) => {
-    var new_state
+    let new_state
     switch (action.type) {
         case SHOW_ERROR:
             new_state = {type: SHOW_ERROR, text: action.payload}
