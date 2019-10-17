@@ -1,5 +1,7 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import isEmpty from 'lodash/isEmpty';
+import { Redirect } from 'react-router-dom';
 import { Container, Row, Col, Tab, Tabs, Dropdown} from 'react-bootstrap';
 import './Details.css';
 
@@ -12,6 +14,7 @@ export const Details = (props) => {
     } = props.citizen
 
     return (
+        isEmpty(props.citizen) ? <Redirect to='/'/> :
         <div class="Details">
             <Dropdown.Divider />
                   <h2>Citizen Details</h2>
@@ -81,3 +84,11 @@ export const Details = (props) => {
         </div>
     );
 }
+
+const mapStateToProps = (state) => {
+    return {
+      citizen: state.selectedLocalPopulation,
+    };
+  }
+  
+  export default connect(mapStateToProps)(Details);
