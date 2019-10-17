@@ -19,41 +19,49 @@ export const Details = (props) => {
             <Dropdown.Divider />
                   <h2>Citizen Details</h2>
             <Dropdown.Divider />
-            <Container>
+            <Container className="box">
             <Row>
-                <Col>
-                    <div>
-                        <img src={thumbnail} alt="avatar"/>
-                        <h1 className="name">{name}</h1>
+                <Col className="col-card">
+                    <div className="card">
+                        <h2 className="title-card">Character Card</h2>
+                        <Dropdown.Divider />  
+                        <div className="name">
+                            <img src={thumbnail} alt="Avatar"/>
+                            <h1 className="title-name">{name}</h1> 
+                        </div>
                     </div>
                 </Col>
                 <Col>
                     <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-                        <Tab eventKey="profile" title="Profile">
+                        <Tab className="tab" eventKey="profile" title="Profile">
                             <Row>
+                                <Col></Col>
                                 <Col>
-                                    <h4>Age</h4>
-                                    <p className="age">{age}</p>
+                                    <h4 className="title-attr" >Age</h4>
+                                    <li className="list-group-item age">{age}</li>
                                 </Col>
+                                <Col></Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <h4>Height</h4>
-                                    <p className="height">{height}</p>
+                                    <h4 className="title-attr" >Height</h4>
+                                    <li className="list-group-item height">{height}</li>
                                 </Col>
                                 <Col>
-                                    <h4>Weight</h4>
-                                    <p className="weight">{weight}</p>
+                                    <h4 className="title-attr" >Weight</h4>
+                                    <li className="list-group-item weight">{weight}</li>
                                 </Col>
                             </Row>
                             <Row>
+                                <Col></Col>
                                 <Col>
-                                    <h4>Hair Color</h4>
-                                    <p className="hair_color">{hair_color}</p>
+                                    <h4 className="title-attr" >Hair Color</h4>
+                                    <li className="list-group-item hair_color">{hair_color}</li>
                                 </Col>
+                                <Col></Col>
                             </Row>
                         </Tab>
-                        <Tab eventKey="profession" title="Profession">
+                        <Tab className="tab" eventKey="profession" title="Profession">
                             <ul className="list-group">
                                 {
                                     professions.map(function(name, index){
@@ -65,7 +73,7 @@ export const Details = (props) => {
                                 }
                             </ul>
                         </Tab>
-                        <Tab eventKey="friends" title="Friends">
+                        <Tab className="tab" eventKey="friends" title="Friends">
                             <ul className="list-group">
                                 {
                                     friends.map(function(name, index){

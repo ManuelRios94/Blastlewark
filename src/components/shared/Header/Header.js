@@ -9,7 +9,7 @@ class Header extends Component {
         return (
             <div className="Header">
                 <Navbar bg="dark" variant="dark">
-                    <Navbar.Brand href={"/"}><Icon icon={home}/> Blastlewark</Navbar.Brand>
+                    <Navbar.Brand href={"/"} title="Press this to go to the population list!"><Icon icon={home}/> Blastlewark</Navbar.Brand>
                 </Navbar>
             </div>
         );
