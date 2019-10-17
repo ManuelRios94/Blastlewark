@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './PageNotFound.css';
 import { Jumbotron} from 'react-bootstrap';
 
 class PageNotFound extends Component {

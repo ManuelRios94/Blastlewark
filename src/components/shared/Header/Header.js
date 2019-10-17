@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar } from 'react-bootstrap';
-
-import './Header.css';
+import { Icon } from 'react-icons-kit';
+import { home } from 'react-icons-kit/icomoon/home';
 
 class Header extends Component {
 
@@ -9,7 +9,7 @@ class Header extends Component {
         return (
             <div className="Header">
                 <Navbar bg="dark" variant="dark">
-                    <Navbar.Brand href={"/"}>Blastlewark</Navbar.Brand>
+                    <Navbar.Brand href={"/"}><Icon icon={home}/> Blastlewark</Navbar.Brand>
                 </Navbar>
             </div>
         );

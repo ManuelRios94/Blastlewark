@@ -2,14 +2,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import { NotificationContainer } from './NotificationContainer';
+import { Notification } from './NotificationComponent';
 
 const setUp = (props={}) => {
-  const component = shallow(<NotificationContainer {...props}/>);
+  const component = shallow(<Notification {...props}/>);
   return component
 }
 
-describe('<App />', () => {
+describe('<Notification />', () => {
 
   let component;
   beforeEach(() => {

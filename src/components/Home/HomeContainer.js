@@ -19,8 +19,6 @@ export class HomeContainer extends Component {
     this.state = {
       index: -1
     };
-    this.onClick = this.onClick.bind( this );
-    this.onClickDetails = this.onClickDetails.bind( this );
   }
 
 
@@ -48,7 +46,7 @@ export class HomeContainer extends Component {
         })
   }
 
-  onClick(e, t, rowInfo){
+  onClick = (e, t, rowInfo) => {
     e.preventDefault()
     const { selectAction } = this.props;
     this.setState({
@@ -57,7 +55,7 @@ export class HomeContainer extends Component {
     selectAction(rowInfo.original);
   }
 
-  onClickDetails() {
+  onClickDetails = () => {
     const { selectedLocalPopulation, showErrorAction, history } = this.props;
     if (isEmpty(selectedLocalPopulation) ) {
       showErrorAction('Please select a citizen first.');

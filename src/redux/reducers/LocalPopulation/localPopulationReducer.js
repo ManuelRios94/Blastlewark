@@ -7,7 +7,7 @@ import merge from 'lodash/merge';
 export const localPopulationReducer = (state = initialState.localPopulation, action) => {
     switch (action.type) {
         case LOCAL_POPULATION_ADD:
-            var new_state = cloneDeep(state);
+            let new_state = cloneDeep(state);
             return merge(new_state, action.payload);
         case LOCAL_POPULATION_CLEAN_ADD:
             return {};
