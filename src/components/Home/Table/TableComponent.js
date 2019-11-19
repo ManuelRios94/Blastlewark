@@ -22,35 +22,33 @@ const columns = [
   }
 ];
 
-export const Table = props => {
-  return (
-    <div className="Table">
-      <Container>
-        <Row>
-          <Col>
-            <ReactTable
-              filterable
-              defaultFilterMethod={filterCaseInsensitive}
-              data={props.localPopulationList}
-              columns={columns}
-              defaultPageSize={10}
-              getTrProps={(state, rowInfo, column) => {
-                return {
-                  onClick: (e, t) => {
-                    props.onClick(e, t, rowInfo);
-                  },
-                  style: {
-                    background:
-                      rowInfo && rowInfo.index === props.index
-                        ? "#2998AE"
-                        : "#F8FAFA"
-                  }
-                };
-              }}
-            />
-          </Col>
-        </Row>
-      </Container>
-    </div>
-  );
-};
+export const Table = props => (
+  <div className="Table">
+    <Container>
+      <Row>
+        <Col>
+          <ReactTable
+            filterable
+            defaultFilterMethod={filterCaseInsensitive}
+            data={props.localPopulationList}
+            columns={columns}
+            defaultPageSize={10}
+            getTrProps={(state, rowInfo, column) => {
+              return {
+                onClick: (e, t) => {
+                  props.onClick(e, t, rowInfo);
+                },
+                style: {
+                  background:
+                    rowInfo && rowInfo.index === props.index
+                      ? "#2998AE"
+                      : "#F8FAFA"
+                }
+              };
+            }}
+          />
+        </Col>
+      </Row>
+    </Container>
+  </div>
+);
