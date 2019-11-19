@@ -1,33 +1,31 @@
-import React from 'react';
-import { mount } from 'enzyme';
-import { expect } from 'chai';
+import React from "react";
+import { mount } from "enzyme";
+import { expect } from "chai";
 
-import { Button} from 'react-bootstrap';
+import { Button } from "react-bootstrap";
 
-import { Menu } from './MenuComponent';
+import { Menu } from "./MenuComponent";
 
-const setUp = (props={}) => {
-  const component = mount(<Menu {...props}/>);
-  return component
-}
+const setUp = (props = {}) => {
+  const component = mount(<Menu {...props} />);
+  return component;
+};
 
-describe('<Menu />', () => {
-
+describe("<Menu />", () => {
   let component;
   beforeEach(() => {
     const props = {
-        localPopulation: {},
-        onClick: () => {}
-    }
+      localPopulation: {},
+      onClick: () => {}
+    };
     component = setUp(props);
-  })
+  });
 
-  it('It should render without crashing', () => {
+  it("It should render without crashing", () => {
     expect(component.length).to.equal(1);
   });
 
-  it('It should render a button', () => {
+  it("It should render a button", () => {
     expect(component.find(Button)).to.have.lengthOf(1);
   });
-
 });

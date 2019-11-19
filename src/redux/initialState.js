@@ -1,9 +1,7 @@
-
-
 const initialState = {
-    localPopulation: [],
-    selectedLocalPopulation: {},
-    notification: {},
-}
+  localPopulation: [],
+  selectedLocalPopulation: {},
+  notification: {}
+};
 
 export default initialState;
