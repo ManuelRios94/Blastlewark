@@ -1,25 +1,23 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import { expect } from 'chai';
+import React from "react";
+import { shallow } from "enzyme";
+import { expect } from "chai";
 
-import Header from './Header';
+import Header from "./Header";
 
-const setUp = (props={}) => {
-  const component = shallow(<Header {...props}/>);
-  return component
-}
+const setUp = (props = {}) => {
+  const component = shallow(<Header {...props} />);
+  return component;
+};
 
-describe('<Header />', () => {
-
+describe("<Header />", () => {
   let component;
   beforeEach(() => {
     component = setUp();
-  })
-
-  it('It should render without crashing', () => {
-    const wrapper = component.find('.Header')
-
-    expect(wrapper.length).to.equal(1); 
   });
 
+  it("It should render without crashing", () => {
+    const wrapper = component.find(".Header");
+
+    expect(wrapper.length).to.equal(1);
+  });
 });

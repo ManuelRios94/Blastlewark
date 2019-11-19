@@ -1,13 +1,8 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import { reducerLocalPopulation } from './LocalPopulation/index';
-import { reducersShared } from './Shared/index';
+import { reducerLocalPopulation } from "./LocalPopulation/index";
+import { reducersShared } from "./Shared/index";
 
-const allReducers = Object.assign({}, 
-    reducerLocalPopulation,
-    reducersShared,
-    );
+const allReducers = Object.assign({}, reducerLocalPopulation, reducersShared);
 
-export const reducers = combineReducers(
-    allReducers
-);
+export const reducers = combineReducers(allReducers);

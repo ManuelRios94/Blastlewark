@@ -1,33 +1,31 @@
-import React from 'react';
-import { mount } from 'enzyme';
-import { expect } from 'chai';
+import React from "react";
+import { mount } from "enzyme";
+import { expect } from "chai";
 
 import ReactTable from "react-table";
 
-import { Table } from './TableComponent';
+import { Table } from "./TableComponent";
 
-const setUp = (props={}) => {
-  const component = mount(<Table {...props}/>);
-  return component
-}
+const setUp = (props = {}) => {
+  const component = mount(<Table {...props} />);
+  return component;
+};
 
-describe('<Table />', () => {
-
+describe("<Table />", () => {
   let component;
   beforeEach(() => {
     const props = {
-        localPopulation: {},
-        onClick: () => {}
-    }
+      localPopulation: {},
+      onClick: () => {}
+    };
     component = setUp(props);
-  })
+  });
 
-  it('It should render without crashing', () => {
+  it("It should render without crashing", () => {
     expect(component.length).to.equal(1);
   });
 
-  it('It should render a react table', () => {
+  it("It should render a react table", () => {
     expect(component.find(ReactTable)).to.have.lengthOf(1);
   });
-
 });
